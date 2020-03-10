@@ -10,6 +10,8 @@ public class InventoryController {
 	InventoryServiceImpl inventoryServiceImpl;
 	public void checl() {
 		Inventory inv = new Inventory();
+		inv.setInventoryName("surendra");
+		
 		inventoryServiceImpl.addInventory(inv);
 		
 	}
