@@ -3,19 +3,19 @@ package com.surendra.tutorial.Repositories;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.surendra.tutorial.Entities.Inventory;
-
+import com.surendra.tutorial.Entities.Product;
 
 @Repository
-public class InventoryRepository implements InventoryDao   {
+public class ProductRepository implements ProductDao {
 	@PersistenceContext
 	private EntityManager em;
 	@Transactional
-	public void addInventory(Inventory inventory) {
-		em.persist(inventory);
+	public void addProduct(Product product) {
+		em.persist(product);
 	}
-
 }

@@ -5,18 +5,19 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.surendra.tutorial.Entities.Inventory;
+import com.surendra.tutorial.Repositories.InventoryDao;
 import com.surendra.tutorial.Repositories.InventoryRepository;
 
 
 @Service
-public class InventoryServiceImpl{
+public class InventoryServiceImpl implements InventoryService{
 	
 	@Autowired
-	InventoryRepository inventoryRepository;
+	InventoryDao inventoryDao;
 
 	
 	public void addInventory(Inventory inventory) {
-		inventoryRepository.save(inventory);
+		inventoryDao.addInventory(inventory);
 	}
 	
 	
