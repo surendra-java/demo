@@ -1,13 +1,13 @@
 node {
     def app
-
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
     }
     stage('Maven Build') { 
-           sh 'mvn package'
+    	   def mvnHom = tool name: 'maven-3', type: 'maven'
+           sh "${mvnHom}/bin/mvn package"
         }
     stage('Build image') {
         /* This builds the actual image; synonymous to
