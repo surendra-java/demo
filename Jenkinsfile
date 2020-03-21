@@ -6,14 +6,11 @@ node {
 
         checkout scm
     }
-    stages { 
-        stage('Maven Build') { 
+    stage('Maven Build') { 
             steps { 
                echo 'This is a minimal pipeline.' 
             }
         }
-    }
-
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
