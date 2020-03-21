@@ -5,8 +5,8 @@ node {
 
         checkout scm
     }
-    stage('Maven Build') { 
-    	withEnv(["JAVA_HOME=${ tool name: 'java-9', type: 'jdk' }") {
+   stage('Maven Build') { 
+    	withEnv(["JAVA_HOME=${ tool name: 'java-9', type: 'jdk' }"]) {
     	   def mvnHom = tool name: 'maven-3', type: 'maven'
            sh "${mvnHom}/bin/mvn package"
            }
