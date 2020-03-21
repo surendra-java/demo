@@ -7,9 +7,7 @@ node {
         checkout scm
     }
     stage('Maven Build') { 
-            steps { 
-               echo 'This is a minimal pipeline.' 
-            }
+           sh 'mvn package'
         }
     stage('Build image') {
         /* This builds the actual image; synonymous to
