@@ -1,4 +1,4 @@
-stages {
+node {
     def app
     stage('Clone repository') {
         checkout scm
@@ -25,7 +25,9 @@ stages {
         }
     }
     stage('Deploy to Kubernetes'){
-            sh 'kubectl apply -f deployment.yml'
+            steps{
+                sh "sed -i 'surmis/onetoonejpa:latest/onetoonejpa:${env.BUILD_ID}/g' deployment.yaml"
+            }
        
     }
     
