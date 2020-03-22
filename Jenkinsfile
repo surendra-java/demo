@@ -25,10 +25,7 @@ node {
         }
     }
     stage('Deploy to Kubernetes'){
-            steps{
-                sh "sed -i 'surmis/onetoonejpa:latest/onetoonejpa:${env.BUILD_ID}/g' deployment.yaml"
-            }
-       
+           sh "sed -i 'surmis/onetoonejpa:latest/onetoonejpa:${env.BUILD_ID}/g' deployment.yaml"
     }
     
 }
