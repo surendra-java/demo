@@ -1,4 +1,4 @@
-node {
+stages {
     def app
     stage('Clone repository') {
         checkout scm
