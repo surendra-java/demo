@@ -10,7 +10,7 @@ node {
            }
         }
     stage('Build image') {
-        app = docker.build("surmis/onetoonejpa:1")
+        app = docker.build("surmis/onetoonejpa"+"$BUILD_NUMBER")
     }
 
     stage('Test image') {
