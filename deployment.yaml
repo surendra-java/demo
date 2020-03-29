@@ -35,4 +35,4 @@ spec:
       targetPort: 8081
   selector: 
     app: one-to-one-jpa
-  type: LoadBalancer
+  type: LoadBalancerer
