@@ -1,39 +1,38 @@
 --- 
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  labels: 
+metadata:
+  labels:
     app: one-to-one-jpa
   name: one-to-one-jpa
 spec: 
   replicas: 3
-  selector: 
-    matchLabels: 
+  selector:
+    matchLabels:
       app: one-to-one-jpa
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         app: one-to-one-jpa
-    spec: 
-      containers: 
+    spec:
+      containers:
         - 
           image: "surmis/onetoonejpa:latest"
           name: one-to-one-jpa
-          ports: 
+          ports:
             - 
               containerPort: 8083
---- 
+---
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
   name: demo-service
-spec: 
-  ports: 
-    - 
-      nodePort: 30008
-      port: 8081
-      targetPort: 8081
-  selector: 
+spec:
+  selector:
     app: one-to-one-jpa
+  ports:
+    - port: 8081
+      targetPort: 8081
+      nodePort: 30008
   type: LoadBalancer
   
