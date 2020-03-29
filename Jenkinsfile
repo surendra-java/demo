@@ -25,7 +25,7 @@ node {
         }
     }
     stage('Deploy to Kubernetes'){
-           sh "echo -i 'surmis/onetoonejpa:latest/onetoonejpa:${env.BUILD_ID}/g' deployment.yaml"
+           kubernetesDeploy(configs: "deployment.yaml", kubeconfigId: "mykubeconfig")
     }
     
 }
