@@ -22,12 +22,12 @@ spec:
           ports: 
             - 
               containerPort: 8083
-       volumeEnabled: true
-       volumes:
-       - name: deployment-yaml
-         configMap:
-           enabled: true
-           name: one-to-one-jpa-config
+        -
+          env:
+            - name: one-to-one-config
+              valueFrom:
+                configMapKeyRef:
+                  name: one-to-one-jpa-config
 --- 
 apiVersion: v1
 kind: Service
