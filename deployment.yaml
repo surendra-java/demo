@@ -22,12 +22,6 @@ spec:
           ports: 
             - 
               containerPort: 8083
-         env:
-         - name: one-to-one-config
-             valueFrom:
-                configMapKeyRef:
-                  name: one-to-one-jpa-config
-                  key: transformer.mode
 --- 
 apiVersion: v1
 kind: Service
