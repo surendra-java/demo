@@ -10,7 +10,7 @@ node {
            }
         }
     stage('Build image') {
-        app = docker.build("surmis")
+        app = docker.build("surmis/onetoonejpa")
     }
 
     stage('Test image') {
