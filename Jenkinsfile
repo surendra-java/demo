@@ -10,10 +10,7 @@ node {
            }
         }
     stage('Build image') {
-        docker.withRegistry('https://registry.hub.docker.com','DockerHub'){
        		app = docker.build("surmis/onetoonejpa")
-        }
-        
     }
 
     stage('Test image') {
