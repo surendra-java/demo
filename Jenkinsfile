@@ -10,8 +10,6 @@ node {
            }
         }
     stage('Build image') {
-    	def dockerHome = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
-    	env.PATH = "${dockerHome}/bin:${env.PATH}"
         app = docker.build("surmis/onetoonejpa")
     }
 
